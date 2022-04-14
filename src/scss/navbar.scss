@@ -1,0 +1,71 @@
+@import '../config.scss';
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: $white;
+  -webkit-backdrop-filter: blur(8px);
+  -moz-backdrop-filter: blur(8px);
+  height: 25%;
+  .navbar-brand img {
+    width: 25%;
+    margin: 0.6em 4em;
+    height: 50%;    }
+  .navbar-parent {
+    background: transparent;  }
+  .navbar-link {
+    margin: auto 4em;
+    ul {
+      font-size: em(16px);
+      letter-spacing: em(2.7px);
+      display: inline-flex;
+      font-family: $font-family__secondary;   }
+      li {
+        list-style-type: none;
+        margin: auto 0.3em;    }
+    a {
+      margin: 0.5em;
+      color: $white;
+      cursor: pointer;
+      text-decoration: none; }
+    a::before {
+      content: '00';
+      opacity: 0.7;
+      display: inline;
+      font-size: em(16px);
+      margin: 0.5em 0.3em;
+      font-weight: 600;
+      color: $white;   }
+    a::after {
+      content: '';
+      display: block;
+      opacity: 0;
+      margin: 0.4em 0 0 0;
+      border-bottom: 2px solid $white;  }
+    }
+    a:hover:after {
+      opacity: 1;
+      animation: hoverEffect ease-in 3s;
+  }
+}
+
+
+/*media queries*/
+
+@media (min-width: $laptop-sm) {
+  .navbar-link {
+    width: 55%;  }
+}
+
+@media (min-width: $laptop-md) {
+  .navbar-link {
+    width: 47%;  }
+}
+
+
+//animations
+@keyframes hoverEffect {
+  from{transform: scale(0)};
+  to{transform: scale(1)};
+}

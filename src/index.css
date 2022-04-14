@@ -1,0 +1,8 @@
+@import '_config.scss';
+body {
+  font-size: em($font-size__base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  display: block;
+}
