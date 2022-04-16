@@ -1,6 +1,6 @@
 @import '../_config.scss';
 .container {
-  background-image: url('./background-home-desktop.jpg');
+  background: url('./background-home-desktop.jpg') no-repeat center /cover;
   height: 100%;
   width: 100%;
   color: $white;

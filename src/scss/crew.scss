@@ -1,0 +1,59 @@
+@import '../_config.scss';
+
+.container-crew {
+  background: url('./background-crew-desktop.jpg') no-repeat center /cover;
+  height: auto;
+  width: 100%;
+  color: $white;
+  .ez {
+    display: flex;
+    height: 20%;
+    margin: 1em;
+    font-size: em(20px);
+    text-transform: uppercase;
+    font-family: $font-family__secondary;
+    letter-spacing: em(4.75px);
+    justify-content: flex-start;
+     [aria-hidden='true'] {
+      opacity: 0.7;
+      display: inline;
+      align-content: center;
+      font-size: em(16px);
+      margin: 0.3em 0.5em;
+      font-weight: 700;
+      color: $white;
+    }
+    h5 {
+      margin: 0.5em 0;
+      font-family: $font-family__secondary;  }
+  }
+  .crew_body {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 1em;
+    margin: 0.5em 1em;
+    padding-inline-start: 0.5em;
+    padding-block: 5em;
+    .commander-info {
+      display: block;
+      [aria-hidden='true'] > h5 {
+        opacity: 0.7;
+        font-size: em(28px);
+        text-transform: uppercase;
+        font-family: $font-family__primary;
+        margin: 0.3em 0;
+        font-weight: 700;
+        color: $white;       }
+      h3 {
+        font-size: em(48px);
+        margin-block: 0.5em;
+        text-transform: uppercase;
+        font-family: $font-family__secondary;      }
+      p {
+        font-size: em(16px);
+        color: $tropicalblue;
+        letter-spacing: em(2.7px);
+        font-family: $font-family__secondary;      }
+    }
+  }
+}

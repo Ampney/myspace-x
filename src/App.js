@@ -1,9 +1,8 @@
-import { Route, Link, Routes } from 'react-router-dom';
+import { Route , Routes } from 'react-router-dom';
 import {  useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Moon from './components/Moon';
-import Titan from './components/Titan';
+import Crew from './components/Crew';
 
 
 
@@ -22,9 +21,9 @@ function App() {
   return (
     <>
     <Routes>
-      <Route path='/' element={ <App /> } />
-      <Route index element={  <Home></Home> } />
-      <Route path='/Moon.js' element={ <Moon destination={destination}></Moon> } />
+      <Route path='/' element={  <Home></Home> } />
+      <Route path='/Moon.js/*' element={ <Moon destination={destination}></Moon> } />
+      <Route path='/Crew.js/*' element={ <Crew destination={destination}></Crew>} />
     </Routes>
     </>
   );

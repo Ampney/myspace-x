@@ -12,7 +12,7 @@ let display = null;
 
 if(destination) {
   display =   <div className='planetImg'><img src={destination.images && destination.images.webp} alt='moon'></img></div>;
-  content = 
+  content =
   <>
         <div className='details' key={destination[0].name}>
           <h2>{destination && destination[0].name}</h2>
@@ -27,14 +27,14 @@ if(destination) {
                 <p>{destination && destination[0].travel}</p>
               </div>
             </div>
-          </div>    
+          </div>
   </>
 }
 
 return (
   <div className='container-moon'>
     <Navbar></Navbar>
-    <div className='ez'><h5>Pick your destination</h5></div>
+    <div className='ez'><span aria-hidden='true'>01</span><h5>Pick your destination</h5></div>
     <div className='planetSection'>
      {  display }
  <div className='planetInfo'>
@@ -47,14 +47,15 @@ return (
     </ul>
   </nav>
   <Routes>
-    <Route path='/Moon.js' element={<Moon></Moon>} />
-      <Route path='/Mars.js' element={<Mars destination={destination}></Mars>}/>
-      <Route path='/Europa.js' element={<Europa destination={destination}></Europa>}  />
-      <Route path='/Titan.js' element={<Titan destination={destination}></Titan>}  />
+    <Route path='/Moon.js' element={<Moon></Moon>} >
+      <Route path='/Moon.js/Mars.js/*' element={<Mars destination={destination}></Mars>}  />
+      <Route path='/Moon.js/Europa.js' element={<Europa destination={destination}></Europa>}  />
+      <Route path='/Moon.js/Titan.js' element={<Titan destination={destination}></Titan>}  />
+    </Route>
   </Routes>
 
     {content }
-              
+
       </div>
     </div>
   </div>
@@ -63,5 +64,3 @@ return (
 }
 
 export default Moon;
-
-
