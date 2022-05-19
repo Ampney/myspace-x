@@ -1,4 +1,8 @@
 import Navbar from './Navbar';
+import { react } from 'react';
+import Mars from './Mars';
+import Destination from './Destination';
+import Titan from './Titan';
 import { Link } from 'react-router-dom';
 import '../scss/Moon.scss';
 
@@ -13,10 +17,10 @@ return (
       <div className='planetInfo'>
         <nav className='navbar-moon'>
           <ul>
-              <li><Link to='./Moon.js'>Moon</Link></li>
-              <li><Link to='./Mars.js'>Mars</Link></li>
-              <li><Link to='./Europa.js'>Europa</Link></li>
-              <li><Link to='./Titan.js'>Titan</Link></li>
+            <li><Link to={`/Destination`}>Moon</Link></li>
+            <li><Link to={`/Destinaion/Mars`}>Mars</Link></li>
+            <li><Link to={`/Destination/Europa`}>Europa</Link></li>
+            <li><Link to={`/Destinaion/Titan`}>Titan</Link></li>
           </ul>
         </nav>
         <div className='details'>

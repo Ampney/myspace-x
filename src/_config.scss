@@ -15,7 +15,7 @@ $tropicalblue: #D0D6F9;
 
 /*****  functions   ******/
 @function em($target) {
-  @return ($target/$font-size__base) * 1em;
+  @return calc($target/$font-size--base) * 1em;
 }
 
 
