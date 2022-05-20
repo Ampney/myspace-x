@@ -1,9 +1,13 @@
 import '../scss/crew.scss'
 import Navbar from './Navbar'
 import { useEffect,useState  } from 'react';
+import { Icon } from '@iconify/react'
 
-const Crew = ({}) => {
-  const [crew, setCrew] = useState('');
+
+const Crew = () => {
+
+  const [crew, setCrew] = useState(null);
+
 
   useEffect(() => {
     fetch('http://localhost:5000/crew')
@@ -20,7 +24,7 @@ const Crew = ({}) => {
     content =
     <>
     <div className='crew_body'>
-      <div className='commander-info'>
+      <div className='commander-info' key={crew[0].name}>
         <span aria-hidden='true'><h5>{crew && crew[0].role}</h5></span>
         <h3>{crew && crew[0].name}</h3>
         <p>{crew && crew[0].bio}</p>
@@ -30,13 +34,45 @@ const Crew = ({}) => {
       </div>
     </div>
     </>
-
   }
+
+let [person,setPerson] = useState(content)
+let carousels = [<Icon icon="akar-icons:circle" />,
+                <Icon icon="akar-icons:circle" />,
+                <Icon icon="akar-icons:circle" />,
+                <Icon icon="akar-icons:circle" />]
+const displayCrew = (index) => {
+  if (crew) {
+    setPerson(
+      <>
+      <div className='crew_body'>
+        <div className='commander-info' key={crew[index].name}>
+          <span aria-hidden='true'><h5>{crew && crew[index].role}</h5></span>
+          <h3>{crew && crew[index].name}</h3>
+          <p>{crew && crew[index].bio}</p>
+        </div>
+        <div className='commander-image'>
+        {crew[index].image && crew[index].image.png}
+        </div>
+      </div>
+      </>
+    )
+    return person
+  }
+}
+
   return (
     <div className='container-crew'>
       <Navbar></Navbar>
-      { content }
+        <div className='ez'>
+  				<span aria-hidden='true'>02</span>
+  				<h5>Meet your crew</h5>
+  			</div>
+      { person }
       <div className='carousel'>
+         {carousels.map((carousel,index) =>{
+           return <a onClick={()=> displayCrew(index)} key={index}>{carousel}</a>
+        })}
       </div>
     </div>
   );

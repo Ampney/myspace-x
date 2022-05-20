@@ -1,8 +1,5 @@
 import { React, useState } from 'react';
 import { Routes, Route, Link, useNavigate	} from 'react-router-dom';
-import Mars from './Mars';
-import Europa from './Europa';
-import Titan from './Titan';
 import Navbar from './Navbar';
 import '../scss/Moon.scss';
 
@@ -10,7 +7,7 @@ const Moon = ({ destination }) => {
 
 	let moon = null;
 	if (destination) {
-		moon =
+		moon = //for default content}
 		<>
 		<div className='details' key={destination[0].name}>
 		<h2>{destination && destination[0].name}</h2>
@@ -25,16 +22,16 @@ const Moon = ({ destination }) => {
 				<p>{destination && destination[0].travel}</p>
 			</div>
 		</div>
-	</div>);
+	</div>
 	</>
 	}
 	let [content,setContent] = useState(moon)
 	let display = null;
-	let planets = ['Moon', 'Mars','Europe','Titan']
 
-	const displayContent= (index)=>{
+	let planets = ['Moon', 'Mars','Europe','Titan']
+	const displayContent= (index)=>{//to change content display
 		if (destination) {
-			display = <div className='planetImg'><img src={destination.images && destination.images.webp} alt='moon'></img></div>;
+			display = <div className='planetImg'><img src={destination[index].images && destination[index].images.webp} alt='moon'></img></div>;
 				setContent(
 					<>
 					<div className='details' key={destination[index].name}>
@@ -68,9 +65,8 @@ const Moon = ({ destination }) => {
 			<div className='planetSection'>
 				<nav className='navbar-moon'>
 					<ul>
-						{console.log(planets)}
 						{planets.map((planet,index) =>{
-							return <li onClick={()=> displayContent(index)} key={index}>{planet}</li>
+							return <a onClick={()=> displayContent(index)} key={index}>{planet}</a>
 						})}
 					</ul>
 				</nav>

@@ -56,4 +56,18 @@
         font-family: $font-family__secondary;      }
     }
   }
+  .carousel {
+    display: flex;
+    justify-content: flex-start;
+    margin-inline: 1em;
+    padding: 0.5em;
+    a {
+      margin-inline-end: 0.5em;
+      cursor: pointer;  }
+      a:hover {
+        background: #fff;
+        color: #000;
+        border-radius: 10px;
+    }
+  }
 }

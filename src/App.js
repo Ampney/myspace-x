@@ -20,7 +20,6 @@ function App() {
     .then (data => {
       setDestination(data);
       setMoon(data)
-      console.log(moon)
     })
   }, [] )
   return (

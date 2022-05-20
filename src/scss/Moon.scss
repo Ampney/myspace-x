@@ -35,13 +35,13 @@
   grid-column-gap: 1em;
   padding-block: 1.5em;
   .planetImg {
-    width: 100%; 
-    grid-column: 1/2;
-    grid-row: 1/3;
+    width: 100%;
     height: 100%;
+    grid-column: 1/3;
   }
   .planetInfo {
-    display: block;  }
+    display: block;
+    grid-column: 2/3; }
   .navbar-moon {
     grid-column: 2/3;
     margin: 0.2em 0;
