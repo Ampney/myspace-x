@@ -30,7 +30,7 @@ const Crew = () => {
         <p>{crew && crew[0].bio}</p>
       </div>
       <div className='commander-image'>
-      {crew[0].image && crew[0].image.png}
+      <img src={crew[0].images && crew[0].images.webp}></img>
       </div>
     </div>
     </>
@@ -52,7 +52,7 @@ const displayCrew = (index) => {
           <p>{crew && crew[index].bio}</p>
         </div>
         <div className='commander-image'>
-        {crew[index].image && crew[index].image.png}
+        <img src={crew[index].images && crew[index].images.webp}></img>
         </div>
       </div>
       </>

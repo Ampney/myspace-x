@@ -15,10 +15,11 @@ $tropicalblue: #D0D6F9;
 
 /*****  functions   ******/
 @function em($target) {
-  @return calc($target/$font-size--base) * 1em;
+  @return calc($target/$font-size--base) * 1vw;
 }
 
 
 /******@media ******/
-$laptop-sm: 1024px;
+$mobile: 320px;
+$tablet: 768px;
 $laptop-md: 1440px;

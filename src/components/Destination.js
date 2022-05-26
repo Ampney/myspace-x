@@ -9,7 +9,8 @@ const Moon = ({ destination }) => {
 	if (destination) {
 		moon = //for default content}
 		<>
-		<div className='details' key={destination[0].name}>
+		<div className='planetImg'><img src={destination[0].images && destination[0].images.webp} alt='moon'></img></div>
+		<div className='planetInfo' key={destination[0].name}>
 		<h2>{destination && destination[0].name}</h2>
 		<p>{destination && destination[0].description}</p>
 		<div className='avg-time'>
@@ -31,10 +32,10 @@ const Moon = ({ destination }) => {
 	let planets = ['Moon', 'Mars','Europe','Titan']
 	const displayContent= (index)=>{//to change content display
 		if (destination) {
-			display = <div className='planetImg'><img src={destination[index].images && destination[index].images.webp} alt='moon'></img></div>;
 				setContent(
 					<>
-					<div className='details' key={destination[index].name}>
+					<div className='planetImg'><img src={destination[index].images && destination[index].images.webp} alt='moon'></img></div>
+					<div className='planetInfo' key={destination[index].name}>
 						<h2>{destination && destination[index].name}</h2>
 						<p>{destination && destination[index].description}</p>
 						<div className='avg-time'>
@@ -70,10 +71,7 @@ const Moon = ({ destination }) => {
 						})}
 					</ul>
 				</nav>
-				{display}
-				<div className='planetInfo'>
 				{content}
-				</div>
 			</div>
 		</div>
 	);

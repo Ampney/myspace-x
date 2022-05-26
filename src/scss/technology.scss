@@ -1,0 +1,65 @@
+@import '../_config.scss';
+.container-tech {
+  background: url('./background-technology-desktop.jpg') no-repeat center /cover;
+  height: 100vh;
+  color: $white;
+  width: 100%;
+  .ez {
+    display: flex;
+    margin-inline:1em;
+    font-size: em(32px);
+    text-transform: uppercase;
+    font-family: $font-family__secondary;
+    letter-spacing: em(4.75px);
+    justify-content: flex-start;
+     [aria-hidden='true'] {
+      opacity: 0.7;
+      display: inline;
+      align-content: center;
+      font-size: em(32px);
+      margin: 0.6em 0.5em;
+      font-weight: 700;
+      color: $white;    }
+    h5 {
+      margin: 1em 0;
+      font-family: $font-family__primary;   }
+  }
+    .technology-section {
+      display: grid;
+      justify-content: space-around;
+      grid-gap: 20px;
+      grid-template-columns: repeat(5, 1fr);
+      line-height: em(28px);
+      padding: 1em 0;
+      align-items: center;
+      font-family: $font-family__secondary;
+      .carousel {
+        display: flex;
+        grid-column: 1/2;
+        align-items: center;
+        flex-direction: column;
+        .icon {
+          font-size: 5rem;      }   }
+      .technology-info {
+        grid-column: 2/ span 2;
+      h4 {
+        text-transform: uppercase;
+        font-size: em(20px);
+        font-family: $font-family__secondary;   }
+      h3 {
+        font-size: em(64px);
+        text-transform: uppercase;
+        margin-block: 0.5em;
+        font-family: $font-family__primary;
+        letter-spacing: em(0.5px);      }
+      p {
+        font-family: $font-family__secondary;
+        font-size: em(20px);      }
+          }
+      .technology-image {
+        grid-column: 4/ span 2;
+        width: 100%;
+      img {
+        width: 100%;      }   }
+    }
+}
