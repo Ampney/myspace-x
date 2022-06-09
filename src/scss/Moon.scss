@@ -2,7 +2,7 @@
 
 .container-moon {
   background: url('./background-destination-desktop.jpg') no-repeat center /cover;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   color: $white;
 }
@@ -41,7 +41,7 @@
     height: auto;
     grid-column: 1/2;
     img {
-      width: 100%;    }
+      width: 100%;  }
   }
   .navbar-moon {
     grid-column: 2/3;
@@ -105,4 +105,60 @@
       color: $white;  }
   }
 
+}
+
+//animation
+@keyframes circle {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+//  media query //
+@media (max-width: $tablet) {
+  .container-moon {
+    background: url('./background-destination-tablet.jpg') no-repeat center /cover;
+    .planetSection {
+      grid-template-rows: repeat(3, minmax(0,auto));
+      .planetImg {
+        grid-column: 1 / span 2;
+        grid-row: 1/2;      
+        width: 30%;
+        margin: 0 auto; }
+        .navbar-moon {
+          margin: 0 auto;
+          grid-column: 1 / span 2;
+          grid-row: 2/3;  }
+          .planetInfo {
+            width: 60%; 
+            margin: 0 auto;         
+            text-align: center;
+            grid-column: 1 / span 2; 
+            grid-row: 3/4;    
+            p, .avg-time {
+              width: auto;       }
+            .distance, .time { 
+              justify-content: space-around;
+              text-align: center;       }
+         }
+    }
+  }
+}
+
+
+
+@media (max-width: $laptop-md){
+  .container-moon {
+    max-width: 1440px;
+  .ez {
+    [aria-hidden='true'] {
+      font-size: em(33.6px);    }
+  }
+  .planetInfo p {
+    font-size: em(32px);
+    line-height: em(40.8px);  }
+}
 }

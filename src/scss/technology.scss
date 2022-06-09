@@ -45,6 +45,7 @@
       h4 {
         text-transform: uppercase;
         font-size: em(20px);
+        color: #D0D6F9;
         font-family: $font-family__secondary;   }
       h3 {
         font-size: em(64px);
@@ -54,6 +55,7 @@
         letter-spacing: em(0.5px);      }
       p {
         font-family: $font-family__secondary;
+        color: #D0D6F9;
         font-size: em(20px);      }
           }
       .technology-image {
@@ -62,4 +64,44 @@
       img {
         width: 100%;      }   }
     }
+}
+
+
+//media query//
+@media (max-width: $tablet) {
+  .container-tech {
+    background: url('./background-technology-tablet.jpg') no-repeat center /cover;
+    .technology-section {
+      grid-template-rows: repeat(3, minmax(0,auto));
+      .technology-image {
+        grid-column: 1 / span 5;
+        grid-row: 1/2;  
+        width: 90%;
+        margin: 0 auto;    }
+      .carousel { 
+        grid-column: 1 / span 5;
+        flex-direction: row;
+        grid-row: 2/3;
+        margin: 0 auto;  
+        .icon { font-size: 3rem;}    }
+      .technology-info {
+        grid-column: 1 / span 5;
+        width: 50%;
+        text-align: center;
+        grid-row: 3/4;
+        margin: 0 auto;   
+        p { font-size: em(32px)}   }
+    }
+  }
+}
+@media (max-width: $laptop-md) {
+  .container-tech {
+    max-width: 1440px;
+    .technology-info {
+      h4 {  font-size: em(32px) !important;      }
+      p {
+        font-size: em(36px);
+        line-height: em(32px);     }
+    }
+  }
 }

@@ -33,7 +33,7 @@ export default function Technology (props) {
           <p>{technology && technology[0].description}</p>
         </div>
         <div className='technology-image'>
-          <img src={technology && technology[0].images.portrait}></img>
+        <img src={window.innerWidth > 768 ? technology && technology[0].images.portrait : technology && technology[0].images.landscape}></img>
         </div>
       </div>
     </>
@@ -53,7 +53,7 @@ export default function Technology (props) {
                 <p>{technology && technology[index].description}</p>
               </div>
               <div className='technology-image'>
-                <img src={technology && technology[index].images.portrait}></img>
+                <img src={window.innerWidth > 768 ? technology && technology[index].images.portrait : technology && technology[index].images.landscape}></img>
               </div>
           </>
         )
