@@ -20,6 +20,7 @@
   .navbar-link {
     ul {
       padding-block-start: 1em;
+      text-transform: uppercase;
       font-size: em(24px);
       letter-spacing: em(2.7px);
       display: inline-flex;
@@ -54,9 +55,11 @@
 
 
 /*media queries*/
-@media (min-width: $laptop-md) {
-
-}
+@media (min-width: $tablet) {
+    ul {
+      font-size: em(32px);
+    }
+  }
 
 
 //animations

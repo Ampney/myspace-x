@@ -37,7 +37,7 @@
   // padding-block: 1em;
   margin-inline: auto;
   .planetImg {
-    width: 86%;
+    width: 70%;
     height: auto;
     grid-column: 1/2;
     img {
@@ -47,7 +47,7 @@
     grid-column: 2/3;
     margin: 0.2em 0;
   ul {
-    font-size: em(32px);
+    font-size: em(24px);
     letter-spacing: em(2.7px);
     display: flex;
     padding: 0;
@@ -76,7 +76,7 @@
   // padding: 0.2em;
   text-align: left;
   h2 {
-    font-size: em(160px);
+    font-size: em(168px);
     font-family: $font-family__primary;
     text-transform: uppercase;
     margin: 0;  }
@@ -118,6 +118,34 @@
 }
 
 //  media query //
+@media (max-width: $mobile) {
+  .container-moon {
+    background: url('./background-destination-mobile.jpg') no-repeat center /cover;
+    text-align: center;
+    .ez {
+      justify-content: center;
+      [aria-hidden='true'] {
+        margin-block: 0.85em;
+        font-size: em(64px); }
+      h5 {
+        font-size: em(64px);       }
+    }
+    .planetSection {
+      grid-template-columns: none;
+      grid-template-rows: repeat(6, minmax(0, auto)) !important;
+      .navbar-moon ul {
+        font-size: em(48px);      }
+      .planetInfo {
+        width: 75% !important;
+        p {
+          font-size: em(48px);
+          line-height: 1.5em;        }      }
+        }
+      .planetImg {
+        width: 50% !important;      }
+  }
+}
+
 @media (max-width: $tablet) {
   .container-moon {
     background: url('./background-destination-tablet.jpg') no-repeat center /cover;
@@ -153,12 +181,8 @@
 @media (max-width: $laptop-md){
   .container-moon {
     max-width: 1440px;
-  .ez {
-    [aria-hidden='true'] {
-      font-size: em(33.6px);    }
   }
   .planetInfo p {
-    font-size: em(32px);
-    line-height: em(40.8px);  }
+    font-size: em(24px); }
 }
-}
+

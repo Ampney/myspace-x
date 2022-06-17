@@ -1,0 +1,84 @@
+@import '../config';
+
+.icons {
+   display: flex;
+   justify-content: space-between;
+   padding: 1em;
+   align-items: center;
+   .logo {
+     width: 9%;
+       img {
+           width: 100%;
+           height: 100%;      }
+   }
+   .hamburger {
+     width: 7%;
+       img {
+           width: 100%;
+           height: 100%;       }
+    }  
+    .menu {
+        display: none;
+        width: 70%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 7.9rem;
+        opacity: 1;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        -moz-backdrop-filter: blur(20px);
+        background: transparent;
+        .close {
+            display: flex;
+            justify-content: flex-end;
+            padding: 1em;
+            align-items: center; 
+            img {
+                width: 10%;           }
+        }
+        .nav-link {
+            ul {
+                padding-block: 2em;
+                font-size: em(80px);
+                letter-spacing: em(2.7px);
+                display: flex;
+                text-transform: uppercase;
+                flex-direction: column;
+                font-family: $font-family__secondary;   }
+                li {
+                    display: flex;
+                    justify-content: space-between;
+                    list-style-type: none;
+                    margin: 0 0.3em;    }
+                li::after {
+                    content: '';
+                    opacity: 0;
+                    display: inline;
+                    border-right: 5px solid $white;                }
+                li:hover:after {
+                    opacity: 1;
+                    animation: hoverEffect ease-in 1s;                }
+                li:active {
+                    opacity: 1;                }
+                    a {
+                        margin: 1em;                        
+                        color: $white;
+                        text-decoration: none; }
+                        a > [aria-hidden='true'] {
+                            opacity: 0.7;
+                            display: inline;
+                            font-size: em(80px);
+                            margin-inline-end: 0.75em;
+                            font-weight: 700;
+                            color: $white;   }                 }
+                            a:hover:after {
+                                opacity: 1;
+                                animation: hoverEffect ease-in 1s;        }
+                            a:active {
+                                opacity: 1;        }
+            }
+        }
+    
+        
+        

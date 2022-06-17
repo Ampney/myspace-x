@@ -2,6 +2,8 @@ import { React, useState } from 'react';
 import { Routes, Route, Link, useNavigate	} from 'react-router-dom';
 import Navbar from './Navbar';
 import '../scss/Moon.scss';
+import Hamburger from './Hamburger';
+
 
 const Moon = ({ destination }) => {
 
@@ -58,7 +60,7 @@ const Moon = ({ destination }) => {
 
 	return (
 		<div className='container-moon'>
-			<Navbar></Navbar>
+			{window.innerWidth <= 425 ? <Hamburger></Hamburger> : <Navbar></Navbar>}
 			<div className='ez'>
 				<span aria-hidden='true'>01</span>
 				<h5>Pick your destination</h5>

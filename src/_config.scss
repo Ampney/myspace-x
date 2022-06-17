@@ -12,6 +12,7 @@ $darkblue: #0B0D17;
 $white: #fff;
 $black: #000;
 $tropicalblue: #D0D6F9;
+$gray: #aaa;
 
 /*****  functions   ******/
 @function em($target) {
@@ -20,6 +21,6 @@ $tropicalblue: #D0D6F9;
 
 
 /******@media ******/
-$mobile: 320px;
+$mobile: 425px;
 $tablet: 768px;
 $laptop-md: 1440px;

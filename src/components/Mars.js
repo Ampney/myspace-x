@@ -11,7 +11,7 @@ const Mars = ({destination}) => {
 
 return (
   <div className='container-moon'>
-    <Navbar></Navbar>
+    {window.innerWidth <= 425 ? <Hamburger></Hamburger> : <Navbar></Navbar>}
     <div className='ez'><h5>Pick your destination</h5></div>
     <div className='planetSection'>
       <div className='planetImg'><img src='' alt='mars'></img></div>

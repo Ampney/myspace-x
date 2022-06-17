@@ -3,6 +3,8 @@ import { Icon } from '@iconify/react'
 import {useEffect,useState} from 'react';
 import React from 'react'
 import Navbar from './Navbar'
+import Hamburger from './Hamburger';
+
 
 
 export default function Technology (props) {
@@ -62,7 +64,7 @@ export default function Technology (props) {
     }
   return (
     <div className='container-tech'>
-      <Navbar></Navbar>
+      {window.innerWidth <= 425 ? <Hamburger></Hamburger> : <Navbar></Navbar>}
       <div className='ez'>
   				<span aria-hidden='true'>03</span>
   				<h5>Space Launch 101</h5>

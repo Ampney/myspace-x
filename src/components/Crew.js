@@ -2,6 +2,8 @@ import '../scss/crew.scss'
 import Navbar from './Navbar'
 import { useEffect,useState  } from 'react';
 import { Icon } from '@iconify/react'
+import Hamburger from './Hamburger';
+
 
 
 const Crew = () => {
@@ -63,7 +65,7 @@ const displayCrew = (index) => {
 
   return (
     <div className='container-crew'>
-      <Navbar></Navbar>
+      {window.innerWidth <= 425 ? <Hamburger></Hamburger> : <Navbar></Navbar>}
         <div className='ez'>
   				<span aria-hidden='true'>02</span>
   				<h5>Meet your crew</h5>

@@ -42,20 +42,20 @@
         font-family: $font-family__primary;
         margin: 0.3em 0;
         font-weight: 700;
-        color: $white;       }
+        color: $gray;       }
       h3 {
         font-size: em(48px);
         margin-block: 0.5em;
         text-transform: uppercase;
         font-family: $font-family__secondary;      }
       p {
-        font-size: em(32px);
+        font-size: em(24px);
         color: $tropicalblue;
         letter-spacing: em(2.7px);
         font-family: $font-family__secondary;      }
     }
   .commander-image {
-    width: 60%;
+    width: 50%;
     height: auto;
     grid-column: 2/3;
     img{
@@ -78,6 +78,39 @@
 }
 
 //media queries
+@media (max-width: $mobile) {
+  .container-crew {
+    background: url('./background-crew-mobile.jpg') no-repeat center /cover;
+    text-align: center;
+    .ez {
+      justify-content: center;
+      [aria-hidden='true'] {
+        margin-block: 0.85em;
+        font-size: em(64px); }
+      h5 {
+        font-size: em(64px);       }
+    }
+    .crew_body {
+      grid-template-columns: none;
+      grid-template-rows: repeat(3, minmax(0, auto)) !important;
+      .commander-image {
+        grid-row: 1/2 !important; 
+        width: 55% !important;     }
+      .commander-info {
+        [aria-hidden='true'] > h5 {
+          font-size: em(64px) !important;        } 
+        h3 {
+          font-size: em(80px) !important;        }
+        p {
+          font-size: em(64px) !important; 
+          width: 80% !important;
+          line-height: em(64.2px) !important;        }
+      }
+    }
+  }
+}
+
+
 @media (max-width: $tablet) {
   .container-crew {
     background: url('./background-crew-tablet.jpg') no-repeat center /cover;
@@ -92,13 +125,17 @@
       .commander-info {
         grid-column: 1 / span 2;
         margin: 0 auto;
-        text-align: center;   
+        text-align: center;  
+        [aria-hidden='true'] > h5 {
+          font-size: em(32px);        } 
         p { 
          width: 70%; 
+         line-height: em(45px);
          margin: 0 auto; }   }
       .carousel {
         grid-column: 1 / span 2;
         grid-row: 2 / 3;
+        margin: 0 auto;
       }
     }
   }
@@ -108,10 +145,6 @@
 @media (max-width: $laptop-md) {
   .container-crew {
     max-width: 1440px;
-    .ez {
-      [aria-hidden='true'] {
-        font-size: em(33.6px);    }
-    }
   .commander-image {
     img {margin: 0 10em;}
   }

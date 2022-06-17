@@ -1,5 +1,7 @@
 import Navbar from './Navbar';
 import '../scss/home.scss';
+import Hamburger from './Hamburger';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const info = 'So, you want to travel to';
@@ -9,7 +11,7 @@ const Home = () => {
 
 return (
   <div className='container'>
-    <Navbar></Navbar>
+    {window.innerWidth <= 425 ? <Hamburger></Hamburger> : <Navbar></Navbar>}
     <div className="home-content">
       <div className='home-info'>
         <h5>{ info }</h5>
@@ -17,7 +19,7 @@ return (
         <p>{ text}</p>
       </div>
       <div className='btns'>
-        <button>Explore</button>
+        <Link to='/Destination'><button>Explore</button></Link>
       </div>
     </div>
   </div>
