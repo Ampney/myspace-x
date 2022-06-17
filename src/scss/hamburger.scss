@@ -48,6 +48,7 @@
                 font-family: $font-family__secondary;   }
                 li {
                     display: flex;
+                    animation: open ease-in-out 1s;
                     justify-content: space-between;
                     list-style-type: none;
                     margin: 0 0.3em;    }
@@ -81,4 +82,9 @@
         }
     
         
+        //animation 
+     @keyframes open {
+         0% {  transform: translateX(100px); opacity: 0;    }
+         100% {   transform: translate(0, 0);  opacity: 1;   }
+   }   
         
