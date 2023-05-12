@@ -13,7 +13,7 @@ function App() {
   const [moon, setMoon] = useState(null)
 
   useEffect(() => {
-    fetch('http://localhost:5000/destinations')
+    fetch('https://api.jsonbin.io/v3/b/645e4e1cb89b1e22999c534c')
     .then(res => {
       return res.json()
     })
