@@ -51,7 +51,7 @@
 }
 
 // media queries
-@media (max-width: $mobile) {
+@media screen and (max-width: $mobile) {
   .container {
     background: url('./background-home-mobile.jpg') no-repeat center /cover !important;  
     .home-content {
@@ -76,7 +76,7 @@
   }
 }
 
-@media (max-width: $tablet) {
+@media screen and (max-width: $tablet) {
   .container {
     background: url('./background-home-tablet.jpg') no-repeat 0px -250px /cover;
     .home-content {
@@ -112,3 +112,5 @@
     }
   }
 }
+
+

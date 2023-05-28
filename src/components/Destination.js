@@ -3,51 +3,55 @@ import { Routes, Route, Link, useNavigate	} from 'react-router-dom';
 import Navbar from './Navbar';
 import '../scss/Moon.scss';
 import Hamburger from './Hamburger';
+import { motion } from 'framer-motion';
 
 
 const Moon = ({ destination }) => {
 
 	let moon = null;
+	let moonDetails = destination[0][0].destinations;
+	
 	if (destination) {
 		moon = //for default content}
 		<>
-		<div className='planetImg'><img src={destination[0].images && destination[0].images.webp} alt='moon'></img></div>
-		<div className='planetInfo' key={destination[0].name}>
-		<h2>{destination && destination[0].name}</h2>
-		<p>{destination && destination[0].description}</p>
+		<div className='planetImg'><img src={moonDetails[0].images.webp} alt='moon'></img></div>
+		<div className='planetInfo' key={moonDetails[0].name}>
+		<h2>{destination && moonDetails[0].name}</h2>
+		<p>{destination && moonDetails[0].description}</p>
 		<div className='avg-time'>
 			<div className='distance'>
 				<p>Avg. distance</p>
 				<p>Est. travel time</p>
 			</div>
 			<div className='time'>
-				<p>{destination && destination[0].distance}</p>
-				<p>{destination && destination[0].travel}</p>
+				<p>{destination && moonDetails[0].distance}</p>
+				<p>{destination && moonDetails[0].travel}</p>
 			</div>
 		</div>
 	</div>
 	</>
 	}
-	let [content,setContent] = useState(moon)
-	let display = null;
 
-	let planets = ['Moon', 'Mars','Europe','Titan']
-	const displayContent= (index)=>{//to change content display
+
+	let [content,setContent] = useState(moon);
+	let planets = ['Moon', 'Mars','Europe','Titan'];
+
+	const displayContent= (index) => {//to change content display
 		if (destination) {
 				setContent(
 					<>
-					<div className='planetImg'><img src={destination[index].images && destination[index].images.webp} alt='moon'></img></div>
-					<div className='planetInfo' key={destination[index].name}>
-						<h2>{destination && destination[index].name}</h2>
-						<p>{destination && destination[index].description}</p>
+					<div className='planetImg'><img src={moonDetails[index].images && moonDetails[index].images.webp} alt='moon'></img></div>
+					<div className='planetInfo' key={moonDetails[index].name}>
+						<h2>{moonDetails[index] && moonDetails[index].name}</h2>
+						<p>{moonDetails[index] && moonDetails[index].description}</p>
 						<div className='avg-time'>
 							<div className='distance'>
 								<p>Avg. distance</p>
 								<p>Est. travel time</p>
 							</div>
 							<div className='time'>
-								<p>{destination && destination[index].distance}</p>
-								<p>{destination && destination[index].travel}</p>
+								<p>{moonDetails[index] && moonDetails[index].distance}</p>
+								<p>{moonDetails[index] && moonDetails[index].travel}</p>
 							</div>
 						</div>
 					</div>
@@ -59,7 +63,10 @@ const Moon = ({ destination }) => {
 	}
 
 	return (
-		<div className='container-moon'>
+		<motion.div className='container-moon'
+		initial={{ opacity: 0, y: 1000 }}
+		animate={{ opacity: 1, y: 0 }}
+		transition={{ duration: 3 }}>
 			{window.innerWidth <= 425 ? <Hamburger></Hamburger> : <Navbar></Navbar>}
 			<div className='ez'>
 				<span aria-hidden='true'>01</span>
@@ -75,7 +82,7 @@ const Moon = ({ destination }) => {
 				</nav>
 				{content}
 			</div>
-		</div>
+		</motion.div>
 	);
 }
 

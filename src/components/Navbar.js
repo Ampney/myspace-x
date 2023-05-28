@@ -14,7 +14,7 @@ const Navbar = () => {
 					<ul>
 						<li><Link to='/'><span aria-hidden='true'>00</span>Home</Link></li>
 						<li><Link to='/Destination'><span aria-hidden='true'>01</span>Destination</Link></li>
-						<li><Link to='/Crew'><span aria-hidden='true'>02</span>Crew</Link></li>
+						<li><Link to='/Crew' state={{from: "Destination" }}><span aria-hidden='true'>02</span>Crew</Link></li>
 						<li><Link to='/Technology'><span aria-hidden='true'>03</span>Technology</Link></li>
 					</ul>
 				</div>

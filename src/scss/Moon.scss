@@ -34,7 +34,6 @@
   grid-column-gap: 1em;
   width: 95%;
   align-items: center;
-  // padding-block: 1em;
   margin-inline: auto;
   .planetImg {
     width: 70%;
@@ -47,8 +46,9 @@
     grid-column: 2/3;
     margin: 0.2em 0;
   ul {
-    font-size: em(24px);
-    letter-spacing: em(2.7px);
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2.7px;
     display: flex;
     padding: 0;
     font-family: $font-family__secondary;    }
@@ -76,13 +76,15 @@
   // padding: 0.2em;
   text-align: left;
   h2 {
-    font-size: em(168px);
+    font-size: 100px;
+    line-height: 115px;
     font-family: $font-family__primary;
     text-transform: uppercase;
     margin: 0;  }
   p {
     font-family: $font-family__secondary;
-    line-height: em(28px);
+    font-size: 18px;
+    line-height: 32px;
     color: $tropicalblue;
     width: 80%; }
   .avg-time {
@@ -95,11 +97,13 @@
       display: flex;
       margin-block: 0.5em;  }
     .distance p{
-      font-size: em(24px);
-      letter-spacing: em(2.35px);
+      font-size: 14px;
+      line-height: 17px;    
+      letter-spacing: 2.3625px;
       font-family: $font-family__primary;    }
     .time p {
-      font-size: em(32px);
+      font-size: 28px;
+      line-height: 32px;
       margin: 0;
       font-family: $font-family__primary;
       color: $white;  }
@@ -118,7 +122,7 @@
 }
 
 //  media query //
-@media (max-width: $mobile) {
+@media screen and (max-width: $mobile) {
   .container-moon {
     background: url('./background-destination-mobile.jpg') no-repeat center /cover;
     text-align: center;
@@ -137,6 +141,9 @@
         font-size: em(48px);      }
       .planetInfo {
         width: 75% !important;
+        h2 { 
+          font-size: 56px;
+          line-height: 64px; }
         p {
           font-size: em(48px);
           line-height: 1.5em;        }      }
@@ -146,7 +153,7 @@
   }
 }
 
-@media (max-width: $tablet) {
+@media screen and (max-width: $tablet) {
   .container-moon {
     background: url('./background-destination-tablet.jpg') no-repeat center /cover;
     .planetSection {
@@ -178,7 +185,7 @@
 
 
 
-@media (max-width: $laptop-md){
+@media screen and (max-width: $laptop-md){
   .container-moon {
     max-width: 1440px;
   }

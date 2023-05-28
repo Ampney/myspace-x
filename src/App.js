@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { Route , Routes } from 'react-router-dom';
 import {  useState, useEffect } from 'react';
 import Home from './components/Home';
@@ -9,24 +10,23 @@ import Crew from './components/Crew';
 
 
 function App() {
-  const [destination, setDestination] = useState('');
-  const [moon, setMoon] = useState(null)
-
+  const baseURL = "https://64611033491f9402f49dca39.mockapi.io/myspacex";
+  const [destination, setDestination] = useState(null);
+  
   useEffect(() => {
-    fetch('https://api.jsonbin.io/v3/b/645e4e1cb89b1e22999c534c')
-    .then(res => {
-      return res.json()
-    })
+    axios.get(baseURL)
     .then (data => {
-      setDestination(data);
-      setMoon(data)
+      setDestination(data.data);
     })
-  }, [] )
+  },[])
+
+
+  if (!destination) return null;
   return (
     <>
     <Routes>
       <Route path='/' exact element={  <Home></Home> } />
-      <Route path='/Destination' exact element={ <Destination destination={destination} moon={moon}></Destination> } />
+      <Route path='/Destination' exact element={ <Destination destination={[destination]}></Destination> } />
       <Route path='/Crew' exact element={ <Crew destination={destination}></Crew>} />
       <Route path='/Technology' exact element={ <Technology destination={destination}></Technology>} />
     </Routes>

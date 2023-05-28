@@ -3,47 +3,34 @@ import { Link } from 'react-router-dom'
 import hamburger from '../scss/icon-hamburger.svg';
 import close from '../scss/icon-close.svg';
 import '../scss/hamburger.scss'
+import {useState} from 'react';
 
 
-export default function Hamburger (){
+const Hamburger = () => {
 
-    let showMenu = true;
-    const burger = document.querySelector('div.hamburger > img');
-    const mobileMenu = document.querySelector('.menu');
-    
-    function openHamburger () {
+    const [showMenu, setshowMenu] = useState(false);
+    const icon = document.querySelector('.menu');
+
+    const handleHamburger = ()=>{
         if (showMenu) {
-            burger.style.display = 'none';
-            burger.setAttribute('src', close)
-            mobileMenu.style.display = 'block';
-            showMenu = false;
-            console.log(showMenu + ` opened and clicked`);
-        } 
-    }
-    function closeHamburger () {
-        if(!showMenu) {
-            burger.setAttribute('src', hamburger)
-            burger.style.display = 'block';
-            mobileMenu.style.display = 'none';
-            showMenu = true;
-            console.log(showMenu + ` closed and clicked`);
+            icon.style.display = 'block';   
+        };
+        setshowMenu(true)
         }
-    }
-       
-     
-     
-     return (
-         <>
+
+    
+    return (
+        <>
          <div className="icons">
             <div className='logo'>
-             <img src={logo}></img>
+             <img src={logo} alt='logo'></img>
             </div>
-            <div className='hamburger' onClick={openHamburger}>
-             <img src={hamburger}></img>
+            <div className='hamburger' onClick={handleHamburger}>
+             <img src={hamburger} alt='hamburger'></img>
             </div>
             <div className='menu'>
-                <div className='close' onClick={closeHamburger}>
-                    <img src={close} ></img>
+                <div className='close' onClick={handleHamburger}>
+                    <img src={close} alt='nav'></img>
                 </div>
 				<div className="nav-link">
 					<ul>
@@ -57,5 +44,6 @@ export default function Hamburger (){
          </div>
         </>
 
-)
-}
+)}
+
+export default Hamburger;

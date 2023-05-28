@@ -7,7 +7,7 @@ import Europa from './Europa';
 import Titan from './Titan';
 
 const Mars = ({destination}) => {
-
+  let moonDetails = destination[0].destinations[1];
 
 return (
   <div className='container-moon'>
@@ -27,16 +27,16 @@ return (
 
 
         <div className='details'>
-          <h2>{destination && destination[1].name}</h2>
-          <p>{destination && destination[1].description}</p>
+          <h2>{moonDetails.name}</h2>
+          <p>{moonDetails.description}</p>
           <div className='avg-time'>
             <div className='distance'>
             <p>Avg. distance</p>
             <p>Est. travel time</p>
             </div>
             <div className='time'>
-            <p>{destination && destination[1].distance}</p>
-            <p>{destination && destination[1].travel}</p>
+            <p>{moonDetails.distance}</p>
+            <p>{moonDetails.travel}</p>
             </div>
           </div>
         </div>
